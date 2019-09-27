@@ -129,6 +129,9 @@ module.exports = {
       sass: {
         // @/ 是 src/ 的别名
         // 所以这里假设你有 `src/variables.sass` 这个文件
+        // 注意：sass-loader的版本 >= 8.0.0，key值data需要替换成 prependData
+        // 即 prependData: `@import "~@/variables.sass"`
+        // 该问题的issue地址https://github.com/webpack-contrib/sass-loader/issues/760
         data: `@import "~@/variables.sass"`
       },
       // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效
